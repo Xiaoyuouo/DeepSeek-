@@ -63,13 +63,13 @@ int main()
             // 将JPEG缓冲区数据进行base64编码
             base64Imag = base64_encode((char *)jpgBuf.data(), jpgBuf.size());
             
-            // 调用百度人脸搜索接口（v3版本），在指定用户组（"1,user"）中搜索相似人脸
-            result = client.face_search_v3(base64Imag, "BASE64", "1,user", aip::json_null);
+            // 调用百度人脸搜索接口（v3版本），在指定用户组中搜索相似人脸
+            result = client.face_search_v3(base64Imag, "BASE64", "此处修改为你的用户组", aip::json_null);
             
             // 检查返回结果中是否包含有效数据
             if( !result["result"].isNull() )
             {
-                // 如果相似度得分大于80（注意：此处if后误加分号，导致后续代码无条件执行）
+                // 如果相似度得分大于80
                 if( result["result"]["user_list"][0]["score"].asInt() > 80)
                 {
                     // 获取当前系统时间并格式化为字符串
