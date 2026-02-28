@@ -18,22 +18,6 @@ deepseek\_AA.cpp
 
 
 
-项目结构
-
-text
-
-.
-
-├── CMakeLists.txt                # CMake构建文件
-
-├── face\_recognition.cpp          # 人脸识别程序（百度AI）
-
-├── deepseek\_AA.cpp               # 考勤分析程序（DeepSeek API）
-
-├── README.md                     # 本文件
-
-└── .gitignore                    # Git忽略文件
-
 依赖安装
 
 通用依赖
@@ -86,51 +70,15 @@ sudo apt install build-essential cmake libcurl4-openssl-dev libjsoncpp-dev libop
 
 
 
-环境变量配置（推荐）
-
-为避免在代码中硬编码API密钥，建议通过环境变量设置：
-
-
-
-在\~/.bashrc或\~/.zshrc中添加：
-
-
-
-bash
-
-export BAIDU\_APP\_ID="你的AppID"
-
-export BAIDU\_API\_KEY="你的API Key"
-
-export BAIDU\_SECRET\_KEY="你的Secret Key"
-
-export DEEPSEEK\_API\_KEY="你的DeepSeek API Key"
-
-然后执行source \~/.bashrc使其生效。
-
-
-
-如果不想使用环境变量，也可以直接在代码中修改对应的字符串（不推荐，尤其不要提交到Git仓库）。
+在代码中修改对应的字符串（不推荐，尤其不要提交到Git仓库）。
 
 
 
 编译
 
-使用CMake构建项目：
 
 
-
-bash
-
-mkdir build
-
-cd build
-
-cmake ..
-
-make
-
-编译成功后，在build目录下会生成两个可执行文件：face\_recognition 和 deepseek\_AA。
+编译成功后，会生成两个可执行文件：face\_recognition 和 deepseek\_AA。
 
 
 
@@ -138,15 +86,13 @@ make
 
 1\. 人脸识别程序
 
-bash
-
 ./face\_recognition
 
 程序会自动打开摄像头，实时检测人脸。识别成功后，控制台会输出类似：
 
 
 
-text
+例如：
 
 张三,2025-03-21 14:35:22
 
@@ -154,9 +100,9 @@ text
 
 
 
-bash
-
 ./face\_recognition > attendance.log
+
+
 
 2\. 考勤分析程序
 
@@ -167,8 +113,6 @@ bash
 例如，已有考勤记录文件attendance.log，想统计张三的出勤天数：
 
 
-
-bash
 
 ./deepseek\_AA attendance.log "请统计张三的出勤天数，并列出具体日期"
 
