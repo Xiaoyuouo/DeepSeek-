@@ -27,9 +27,9 @@ int main()
     char buffer[64] = {0};
     
     // 百度AI平台申请的APPID、API Key和Secret Key
-    std::string app_id = "121927569";
-    std::string api_key = "Yao33DZn6qVMiIbXx6xLKkaE";
-    std::string secret_key = "OqjRydzXSXzOVDjX00zrNHtadizYsFLu";
+    std::string app_id = "APPID";
+    std::string api_key = "API Key";
+    std::string secret_key = "Secret Key";
 
     // 创建百度AI人脸客户端对象
     aip::Face client(app_id, api_key, secret_key);

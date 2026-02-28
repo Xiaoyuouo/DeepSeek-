@@ -48,7 +48,7 @@ int main(int argc, char* argv[])
     // API 请求的 URL 和请求头
     const std::string url = "https://api.deepseek.com/chat/completions";
     const std::string type = "Content-Type:application/json";
-    const std::string Authorization = "Authorization: Bearer sk-e0fc2639bc774ddd9abeb4620b389c49"; // 此处为硬编码的 API 密钥
+    const std::string Authorization = "deepseekAPI密钥"; // 此处为硬编码的 API 密钥
     
     struct curl_slist * headers = nullptr;
     headers = curl_slist_append(headers, type.c_str());        // 添加 Content-Type 头
