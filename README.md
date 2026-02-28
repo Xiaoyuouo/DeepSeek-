@@ -50,8 +50,6 @@ OpenCV（推荐 4.x 版本）
 
 安装命令（Ubuntu/Debian示例）
 
-bash
-
 sudo apt update
 
 sudo apt install build-essential cmake libcurl4-openssl-dev libjsoncpp-dev libopencv-dev
